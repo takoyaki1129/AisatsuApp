@@ -15,8 +15,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         button1.setOnClickListener(this)
-
-        textView.text = toString()
     }
 
     override fun onClick(showTimePickerDialog: View) {
@@ -30,8 +28,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 TimePickerDialog.OnTimeSetListener { view, hour, minute ->
                     Log.d("UI_PARTS", "$hour:$minute")
                     when (hour){
-                        2 -> textView.text="おはよう"
-                        10 -> textView.text="こんにちは"
+                        2..9 -> textView.text="おはよう"
+                        10..18 -> textView.text="こんにちは"
                         else -> textView.text="こんばんは"
                     }
                 },
